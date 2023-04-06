@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
+import Header from "./components/Header";
 
 
 const App = () => {
     return (
         <div className='app-wrapper'>
-            <header className='header'>
-                <img
-                    src="https://play-lh.googleusercontent.com/DTzWtkxfnKwFO3ruybY1SKjJQnLYeuK3KmQmwV5OQ3dULr5iXxeEtzBLceultrKTIUTr"
-                    alt="image"/>
-            </header>
+            <Header/>
             <nav className='nav'>
                 <div><a href="#">Profile</a></div>
                 <div><a href="#">Messages</a></div>
