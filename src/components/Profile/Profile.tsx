@@ -1,5 +1,6 @@
 import React from 'react';
 import cl from './Profile.module.css'
+import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
     return (
@@ -14,16 +15,7 @@ const Profile = () => {
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoAEssp5xBCP420VJTAkFru3VTpDnHVnXzjg&usqp=CAU"
                     alt="ava"/>
             </div>
-            <div>
-                My posts
-                <div>
-                    New post
-                </div>
-                <div>
-                    <div>post1</div>
-                    <div>post2</div>
-                </div>
-            </div>
+           <MyPosts/>
         </div>
     )
 }
