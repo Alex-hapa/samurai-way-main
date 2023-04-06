@@ -1,17 +1,18 @@
 import React from 'react';
-import cl from './MyPosts.module.css'
+import cl from './MyPosts.module.css';
+import Post from "./Post/Post";
 
 const MyPosts = () => {
     return (
         <div>
             My posts
             <div>
-                New post
+                <textarea name="" id="" cols={30} rows={10}></textarea>
+                <button>Add post</button>
             </div>
-            <div>
-                <div>post1</div>
-                <div>post2</div>
-            </div>
+            <Post/>
+            <Post/>
+            <Post/>
         </div>
     )
 }
