@@ -7,6 +7,7 @@ type PropsType = {
 }
 
 const Post: React.FC<PropsType> = (props) => {
+    debugger
     return (
         <div className={cl.item}>
             <img
