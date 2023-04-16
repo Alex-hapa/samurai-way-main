@@ -6,6 +6,13 @@ type DialogItemPropsType = {
     name: string
     id: string
 }
+type MessagePropsType = {
+    message: string
+}
+type DialogsPtopsType = {
+    message: MessagePropsType
+}
+
 const DialogItem: React.FC<DialogItemPropsType> = (props) => {
     let dialogPath = '/dialogs/' + props.id;
     return (
@@ -14,15 +21,27 @@ const DialogItem: React.FC<DialogItemPropsType> = (props) => {
         </div>
     )
 }
-type MessagePropsType = {
-    message: string
-}
+
 const Message: React.FC<MessagePropsType> = (props) => {
     return (
         <div className={cl.message}>{props.message}</div>
     )
 }
-const Dialogs = () => {
+const Dialogs/*: React.FC<DialogsPtopsType>*/ = (/*props*/) => {
+    let dialogsData = [
+        {id: 1, name: 'Fedya'},
+        {id: 2, name: 'Sandra'},
+        {id: 3, name: 'John'},
+        {id: 4, name: 'Michael'},
+        {id: 5, name: 'Olga'},
+    ];
+    let messagesData = [
+        {id: 1, message: 'Hi'},
+        {id: 2, message: 'Hi. How are you?'},
+        {id: 3, message: 'I\'m fine. And you?'},
+        {id: 4, message: 'I\'ve seen better days'},
+    ];
+
     return (
         <div className={cl.dialogs}>
             <div className={cl.dialogsItems}>
