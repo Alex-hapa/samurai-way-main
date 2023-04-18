@@ -1,6 +1,7 @@
 import React from 'react';
 import cl from './Dialogs.module.css';
 import {NavLink} from 'react-router-dom';
+import { v1 } from 'uuid';
 
 type DialogItemPropsType = {
     name: string
@@ -28,33 +29,29 @@ const Message: React.FC<MessagePropsType> = (props) => {
     )
 }
 const Dialogs/*: React.FC<DialogsPtopsType>*/ = (/*props*/) => {
-    let dialogsData = [
-        {id: 1, name: 'Fedya'},
-        {id: 2, name: 'Sandra'},
-        {id: 3, name: 'John'},
-        {id: 4, name: 'Michael'},
-        {id: 5, name: 'Olga'},
+    let dialogs = [
+        {id: v1(), name: 'Fedya'},
+        {id: v1(), name: 'Sandra'},
+        {id: v1(), name: 'John'},
+        {id: v1(), name: 'Michael'},
+        {id: v1(), name: 'Olga'},
     ];
-    let messagesData = [
-        {id: 1, message: 'Hi'},
-        {id: 2, message: 'Hi. How are you?'},
-        {id: 3, message: 'I\'m fine. And you?'},
-        {id: 4, message: 'I\'ve seen better days'},
+    let messages = [
+        {id: v1(), message: 'Hi'},
+        {id: v1(), message: 'Hi. How are you?'},
+        {id: v1(), message: 'I\'m fine. And you?'},
+        {id: v1(), message: 'I\'ve seen better days'},
     ];
+    let dialogsElements = dialogs.map((dialog) => <DialogItem name={dialog.name} id={dialog.id}/>);
+    let messagesElements = messages.map((message) => <Message message={message.message} />);
 
     return (
         <div className={cl.dialogs}>
             <div className={cl.dialogsItems}>
-                <DialogItem name={'Fedya'} id={'1'}/>
-                <DialogItem name={'Sandra'} id={'2'}/>
-                <DialogItem name={'John'} id={'3'}/>
-                <DialogItem name={'Michael'} id={'4'}/>
-                <DialogItem name={'Olga'} id={'5'}/>
+                {dialogsElements}
             </div>
             <div className={cl.messages}>
-                <Message message={'Hi'}/>
-                <Message message={'Hi. How are you?'}/>
-                <Message message={'I\'m fine. And you?'}/>
+                {messagesElements}
             </div>
         </div>
     )
