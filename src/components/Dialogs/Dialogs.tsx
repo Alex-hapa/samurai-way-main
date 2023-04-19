@@ -1,33 +1,23 @@
 import React from 'react';
 import cl from './Dialogs.module.css';
-import {NavLink} from 'react-router-dom';
 import { v1 } from 'uuid';
+import DialogItem from './DialogItem/DialogItem';
+import Message from './Message/Message';
 
-type DialogItemPropsType = {
+/*type DialogsItemPropsType = {
     name: string
     id: string
-}
-type MessagePropsType = {
+}*/
+/*type MessagePropsType = {
     message: string
-}
+}*/
+/*
 type DialogsPtopsType = {
     message: MessagePropsType
 }
+*/
 
-const DialogItem: React.FC<DialogItemPropsType> = (props) => {
-    let dialogPath = '/dialogs/' + props.id;
-    return (
-        <div className={cl.dialog + ' ' + cl.active}>
-            <NavLink to={dialogPath}>{props.name}</NavLink>
-        </div>
-    )
-}
 
-const Message: React.FC<MessagePropsType> = (props) => {
-    return (
-        <div className={cl.message}>{props.message}</div>
-    )
-}
 const Dialogs/*: React.FC<DialogsPtopsType>*/ = (/*props*/) => {
     let dialogs = [
         {id: v1(), name: 'Fedya'},
